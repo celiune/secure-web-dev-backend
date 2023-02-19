@@ -21,6 +21,6 @@ jobs:
     - name: Deploy
       uses: renderapp/deploy@1.0.0
       with:
-        render_account_id: <your render account id>
+        render_account_id: celineliu1811@gmail.com
         render_token: ${{ secrets.RENDER_TOKEN }}
-        render_service_id: <your render service id>
+        render_service_id: celine-webapp
