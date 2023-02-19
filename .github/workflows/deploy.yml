@@ -1,0 +1,26 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
+
+    - name: Deploy
+      uses: renderapp/deploy@1.0.0
+      with:
+        render_account_id: <your render account id>
+        render_token: ${{ secrets.RENDER_TOKEN }}
+        render_service_id: <your render service id>
